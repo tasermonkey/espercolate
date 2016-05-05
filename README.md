@@ -19,7 +19,7 @@ Registering 'awesome' as e9015b87-1252-11e6-8a25-6c4008a69828
 Registering 'james' as e90942e1-1252-11e6-805b-6c4008a69828
 {"_index":"test_percolate","_type":".percolator","_id":"e90942e1-1252-11e6-805b-6c4008a69828","_version":1,"_shards":{"total":2,"successful":1,"failed":0},"created":true}
 {
-  "took" : 1,
+  "took" : 4,
   "timed_out" : false,
   "_shards" : {
     "total" : 5,
@@ -27,9 +27,33 @@ Registering 'james' as e90942e1-1252-11e6-805b-6c4008a69828
     "failed" : 0
   },
   "hits" : {
-    "total" : 0,
-    "max_score" : null,
-    "hits" : [ ]
+    "total" : 2,
+    "max_score" : 1.0,
+    "hits" : [ {
+      "_index" : "test_percolate",
+      "_type" : ".percolator",
+      "_id" : "e9015b87-1252-11e6-8a25-6c4008a69828",
+      "_score" : 1.0,
+      "_source":{
+    "query" : {
+        "match" : {
+            "message" : "awesome"
+        }
+    }
+}
+    }, {
+      "_index" : "test_percolate",
+      "_type" : ".percolator",
+      "_id" : "e90942e1-1252-11e6-805b-6c4008a69828",
+      "_score" : 1.0,
+      "_source":{
+    "query" : {
+        "match" : {
+            "message" : "james"
+        }
+    }
+}
+    } ]
   }
 }
 Matching This shall not match
